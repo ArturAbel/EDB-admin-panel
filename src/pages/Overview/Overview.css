@@ -1,0 +1,8 @@
+.overview-section {
+  background-color: darkgrey;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  height: 90vh;
+  width: 100%;
+}
