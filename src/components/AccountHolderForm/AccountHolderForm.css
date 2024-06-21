@@ -1,0 +1,37 @@
+.account-holder-form {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  height: 60vh;
+  width: 60vw;
+}
+
+.holder-form-wrapper {
+  align-items: flex-start;
+  display: flex;
+  gap: 3rem;
+}
+
+.holder-form-image {
+  height: 20rem;
+  width: 15rem;
+}
+
+.holder-form-address {
+  flex-direction: column;
+  display: flex;
+  width: 30%;
+}
+
+.holder-form-details {
+  flex-direction: column;
+  display: flex;
+  width: 30%;
+}
+
+.holder-form-accounts {
+  justify-content: center;
+  flex-direction: column;
+  display: flex;
+  width: 30%;
+}

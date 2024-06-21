@@ -1,0 +1,34 @@
+.subNavbar-section {
+  background-color: var(--background-main3);
+  height: var(--nav-hight);
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  width: 100%;
+}
+
+.subNavbar-links-container {
+  text-shadow: 1px 1px 1px rgba(38, 38, 51, 0.004);
+  text-transform: capitalize;
+  font-size: 1.1rem;
+  display: flex;
+  width: 35rem;
+  height: 3rem;
+  gap: 1rem;
+}
+
+.subNavbar-link {
+  text-shadow: 1px 1px 1px rgba(38, 38, 51, 0.004);
+  border: 1px solid var(--background-main4);
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  color: inherit;
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+.subNavbar-link.active {
+  background-color: var(--background-main4);
+}
