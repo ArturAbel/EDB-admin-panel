@@ -1,13 +1,11 @@
 .navbar-upper {
-  background-color: antiquewhite;
+  height: var(--nav-hight);
   display: flex;
-  height: 8vh;
   width: 100%;
 }
 
 .navbar-upper-left,
 .navbar-upper-right {
-  background-color: aliceblue;
   justify-content: end;
   align-items: center;
   display: flex;
@@ -16,8 +14,10 @@
 }
 .navbar-logout-link {
   text-transform: capitalize;
+  text-transform: uppercase;
   padding-right: 5rem;
-  font-size: 1.2rem;
+  font-size: 1rem;
+  color: inherit;
 }
 
 .navbar-upper-middle {
@@ -35,9 +35,36 @@
   font-size: 3vh;
 }
 
-.navbar-lower{
-  background-color: rgb(255, 197, 121);
+.navbar-lower {
+  background-color: var(--background-main3);
+  height: var(--nav-hight);
+  justify-content: center;
+  align-items: center;
   display: flex;
-  height: 8vh;
   width: 100%;
+}
+
+.navbar-links-container {
+  text-shadow: 1px 1px 1px rgba(38, 38, 51, 0.004);
+  border: 1px solid var(--background-main4);
+  text-transform: capitalize;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  display: flex;
+  width: 45rem;
+  height: 3rem;
+  gap: 1rem;
+}
+
+.navbar-link {
+  justify-content: center;
+  align-items: center;
+  color: inherit;
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+.navbar-link.active {
+  background-color: var(--background-main4);
 }

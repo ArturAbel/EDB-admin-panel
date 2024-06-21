@@ -1,13 +1,13 @@
 
 
-
+1.
 <!-- nav -->
-outlet---|
+outlet---|2.
          |-overview
-         |-Account Holders---|
+         |-Account Holders---|3.
                      <!-- sub nav -->
-                     outlet{
-         |           |-add Member-->
+                     outlet{         4.
+         |           |-add    Member-->details->contract
          |           |-Member bio---|
          |                          |---edit
          |                          |---deactivate ---- confirmation 

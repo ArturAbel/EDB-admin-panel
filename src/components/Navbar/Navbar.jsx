@@ -1,4 +1,5 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+
 import "./Navbar.css";
 
 export const Navbar = () => {
@@ -10,10 +11,25 @@ export const Navbar = () => {
           <div className="navbar-logo">e - DigitalBank</div>
         </div>
         <div className="navbar-upper-right">
-          <Link className="navbar-logout-link">log out</Link>
+          <NavLink className="navbar-logout-link">log out</NavLink>
         </div>
       </section>
-      <section className="navbar-lower"></section>
+      <section className="navbar-lower">
+        <div className="navbar-links-container">
+          <NavLink className="navbar-link" to={"/"}>
+            overview
+          </NavLink>
+          <NavLink className="navbar-link" to={"/members"}>
+            account holders
+          </NavLink>
+          <NavLink className="navbar-link" to={"/transactions"}>
+            transactions
+          </NavLink>
+          <NavLink className="navbar-link" to={"/admin-details"}>
+            admin details
+          </NavLink>
+        </div>
+      </section>
     </nav>
   );
 };

@@ -1,4 +1,4 @@
 .admin-page-section {
-  height: 90vh;
+  height: var(--pages-hight);
   width: 100%;
 }

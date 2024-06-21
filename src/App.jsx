@@ -1,8 +1,15 @@
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { MembersProvider } from "./context/MembersContext";
+import { AddAccount } from "./pages/AddAccount/AddAccount";
 import { AdminPage } from "./pages/AdminPage/AdminPage";
+import { Accounts } from "./pages/Accounts/Accounts";
+import { AccountHolder } from "./pages/AccountHolder/AccountHolder";
 import { Overview } from "./pages/Overview/Overview";
 import { Members } from "./pages/Members/Members";
+import {
+  Navigate,
+  RouterProvider,
+  createBrowserRouter,
+} from "react-router-dom";
 
 import "./css/App.css";
 
@@ -18,15 +25,35 @@ function App() {
           element: <Members />,
           children: [
             {
-              path: "bio",
-              element: "member bio",
+              path: "/members",
+              element: <Navigate to="information" replace />,
+            },
+            {
+              path: "information",
+              element: <Accounts />,
+            },
+            {
+              path: "account",  
+              element: <AccountHolder />,
               children: [
-                { path: "edit", element: "edit" },
-                { path: "deactivate", element: "deactivate" },
+                {
+                  path: "update",
+                  element: "update",
+                },
+                {
+                  path: "deactivate",
+                  element: "deactivate",
+                },
               ],
             },
-            { path: "add", element: "details" },
-            { path: "add", element: "contract" },
+            {
+              path: "add",
+              element: <AddAccount />,
+            },
+            {
+              path: "contract",
+              element: "contract",
+            },
           ],
         },
         {

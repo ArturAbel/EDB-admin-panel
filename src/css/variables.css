@@ -1,26 +1,37 @@
 :root {
   /* Website Backgrounds */
-  --background-dark: rgba(40, 39, 37, 1);
-  --background-secondary-1: #cee3de;
-  --background-secondary-2: #b6d6cb;
-  --background-secondary-3: #83a7a3;
-  --background-secondary-4: #52757f;
-  --background-white: #fffdfa;
-  --background-main: #e4e3dc;
-  --background-grey: #c2c2c5;
+  --background-secondary1: #cee3de;
+  --background-secondary2: #b6d6cb;
+  --background-secondary3: #83a7a3;
+  --background-secondary4: #52757f;
+  --background-secondary5: #3a3f56;
 
-  /*  */
+  --background-main1: #ffffff;
+  --background-main2: #f8f8f8;
+  --background-main3: rgb(240, 237, 237);
+  --background-main4: #c2c2c5;
+  --background-main5: #282725;
+
+  /*Buttons Background*/
   --background-green: #a0cfa6;
   --background-red: #e7a89c;
+
+  /* Font Color */
+  --color-font-text: #262633;
+  --color-font-white: #ffffff;
 
   /* Fonts */
   --font-regular: "AinoRegular", sans-serif;
   --font-title: "AinoHeadline", sans-serif;
   --font-bold: "AVGARDD", sans-serif;
+
+  /* Section Sizes */
+  --subPages-hight: 74vh;
+  --pages-hight: 80vh;
+  --nav-hight: 8vh;
 }
 
 /* Import Fonts */
-
 @font-face {
   font-family: "AinoHeadline";
   src: url("../assets/fonts/Aino-Headline.otf") format("opentype");
