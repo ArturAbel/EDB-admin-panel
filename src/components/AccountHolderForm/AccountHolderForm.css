@@ -1,6 +1,8 @@
 .account-holder-form {
   justify-content: center;
+  flex-direction: column;
   align-items: center;
+  position: relative;
   display: flex;
   height: 60vh;
   width: 60vw;
@@ -13,6 +15,7 @@
 }
 
 .holder-form-image {
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
   height: 20rem;
   width: 15rem;
 }

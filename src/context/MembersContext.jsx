@@ -5,22 +5,32 @@ import useFetch from "../hooks/useFetch";
 const MembersContext = createContext();
 
 export const MembersProvider = ({ children }) => {
-  const {
-    handleRemoveMember,
-    handleUpdateMember,
-    handleAddMember,
-    loading,
-    members,
-    error,
-  } = useFetch(membersURL);
+  const { handleUpdateMember, handleAddMember, loading, members, error } =
+    useFetch(membersURL);
 
+  // Update Member
+  const updateMember = (member) => {
+    const updatedMember = {
+      ...member,
+    };
+    handleUpdateMember(updatedMember);
+  };
+
+  // Deactivate Member
+  const deactivateMember = (member) => {
+    const updatedMember = {
+      ...member,
+      isActive: false,
+    };
+    handleUpdateMember(updatedMember);
+  };
 
   return (
     <MembersContext.Provider
       value={{
-        handleRemoveMember,
-        handleUpdateMember,
+        deactivateMember,
         handleAddMember,
+        updateMember,
         loading,
         members,
         error,

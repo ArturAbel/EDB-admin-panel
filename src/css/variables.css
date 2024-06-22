@@ -12,6 +12,9 @@
   --background-main4: #c2c2c5;
   --background-main5: #282725;
 
+  --background-deactivated: #d32d0c;
+  --background-modal: rgba(40, 39, 37, 0.5);
+
   /*Buttons Background*/
   --background-green: #a0cfa6;
   --background-red: #e7a89c;

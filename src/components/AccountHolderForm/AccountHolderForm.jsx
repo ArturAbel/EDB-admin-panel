@@ -1,10 +1,16 @@
-import { useEffect, useState } from "react";
+import { FormInput } from "../FormInput/FormInput";
+import { useEffect } from "react";
 
 import "./AccountHolderForm.css";
-import { FormInput } from "../FormInput/FormInput";
 
-export const AccountHolderForm = ({ accountHolder }) => {
-  const [accountDetails, setAccountDetails] = useState({});
+export const AccountHolderForm = ({
+  setAccountDetails,
+  setActiveValue,
+  accountDetails,
+  accountHolder,
+  updateDetails,
+  activeValue,
+}) => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -17,6 +23,18 @@ export const AccountHolderForm = ({ accountHolder }) => {
   useEffect(() => {
     setAccountDetails(accountHolder || {});
   }, [accountHolder]);
+
+  useEffect(() => {
+    const activeValue = accountDetails.isActive
+      ? "Active"
+      : accountDetails.isActive === undefined
+      ? ""
+      : "Deactivated";
+    setActiveValue(activeValue);
+    
+  }, [accountDetails]);
+
+  console.log(activeValue);
 
   return (
     <div className="account-holder-form">
@@ -37,54 +55,54 @@ export const AccountHolderForm = ({ accountHolder }) => {
               name={"id"}
             />
             <FormInput
+              disabled={updateDetails ? false : true}
               value={accountDetails.join_date}
               onChange={handleChange}
               label={"Joining Year"}
               name={"join_date"}
-              disabled={true}
               type={"number"}
               min={2000}
             />
             <FormInput
+              disabled={updateDetails ? false : true}
               value={accountDetails.name}
               onChange={handleChange}
-              disabled={true}
               label={"Name"}
               type={"text"}
               name={"name"}
             />
             <FormInput
+              disabled={updateDetails ? false : true}
               value={accountDetails.surname}
               onChange={handleChange}
               label={"Surname"}
               name={"surname"}
-              disabled={true}
               type={"text"}
             />
           </div>
           <div className="holder-form-address">
             <FormInput
+              disabled={updateDetails ? false : true}
               value={accountDetails.street}
               onChange={handleChange}
               label={"Street"}
               name={"street"}
-              disabled={true}
               type={"text"}
             />
             <FormInput
+              disabled={updateDetails ? false : true}
               value={accountDetails.city}
               onChange={handleChange}
               label={"City"}
               type={"text"}
-              disabled={true}
               name={"city"}
             />
             <FormInput
+              disabled={updateDetails ? false : true}
               value={accountDetails.country}
               onChange={handleChange}
               label={"Country"}
               name={"country"}
-              disabled={true}
               type={"text"}
             />
           </div>
@@ -92,23 +110,13 @@ export const AccountHolderForm = ({ accountHolder }) => {
             <label className="holder-form-label" htmlFor="id">
               Active Account
             </label>
-            <select
+            <input
               className="holder-form-input"
               name="isActive"
               disabled
-              value={`${
-                accountDetails.isActive
-                  ? "active"
-                  : accountDetails.isActive === undefined
-                  ? ""
-                  : "deactivated"
-              }`}
+              value={activeValue}
               onChange={handleChange}
-            >
-              <option value=""></option>
-              <option value={"active"}>Active</option>
-              <option value="deactivated">Deactivated</option>
-            </select>
+            ></input>
             <FormInput
               value={accountDetails.balance}
               onChange={handleChange}
@@ -119,12 +127,12 @@ export const AccountHolderForm = ({ accountHolder }) => {
               min={0}
             />
             <FormInput
+              disabled={updateDetails ? false : true}
               value={accountDetails.overdraft}
               onChange={handleChange}
               label={"Overdraft"}
               name={"overdraft"}
               type={"number"}
-              disabled={true}
               min={0}
             />
           </div>

@@ -2,6 +2,7 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  position: relative;
   display: flex;
   height: 100%;
   width: 100%;
@@ -72,24 +73,26 @@
   left: 4.1rem;
 }
 
-.account-holder-get-button {
-  background-color: var(--background-secondary2);
-  color: var(--color-font-text);
-  border: 1px solid transparent;
-  display: inline-block;
-  border-radius: 5px;
-  font-size: 1.2rem;
-  cursor: pointer;
-  padding: 0 1rem;
-  outline: none;
-  height: 3rem;
-}
-
-.account-holder-get-button:hover {
-  filter: brightness(1.1);
-}
-
 .account-holder-container {
+  display: flex;
   height: 60vh;
   width: 80vw;
+}
+
+.account-holder-buttons {
+  justify-content: center;
+  flex-direction: column;
+  align-items: end;
+  display: flex;
+  width: 100%;
+  gap: 2rem;
+}
+
+.account-deactivate,
+.account-update {
+  width: 11rem;
+}
+
+.account-deactivate {
+  background-color: var(--background-red);
 }
