@@ -4,7 +4,7 @@
   --background-secondary2: #b6d6cb;
   --background-secondary3: #83a7a3;
   --background-secondary4: #52757f;
-  --background-secondary5: #3a3f56;
+  --background-secondary5: #4867f2;
 
   --background-main1: #ffffff;
   --background-main2: #f8f8f8;
@@ -18,7 +18,8 @@
   /*Buttons Background*/
   --background-green: #a0cfa6;
   --background-red: #e7a89c;
-  --rs-navs-selected:#282725;
+  --background-blue: #a3afe1;
+  --rs-navs-selected: #282725;
 
   /* Font Color */
   --color-font-text: #262633;

@@ -69,12 +69,12 @@ export const AccountHolder = () => {
               <div className="account-holder-buttons">
                 <button
                   onClick={handleUpdateDetails}
-                  className="account-update button"
+                  className="account-update-button button"
                 >
                   Update Details
                 </button>
                 <button
-                  className="account-deactivate button"
+                  className="account-deactivate-button button"
                   onClick={handleDisplayModal}
                 >
                   Deactivate
