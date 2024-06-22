@@ -18,6 +18,7 @@
   /*Buttons Background*/
   --background-green: #a0cfa6;
   --background-red: #e7a89c;
+  --rs-navs-selected:#282725;
 
   /* Font Color */
   --color-font-text: #262633;
@@ -29,7 +30,7 @@
   --font-bold: "AVGARDD", sans-serif;
 
   /* Section Sizes */
-  --subPages-hight: 74vh;
+  --subPages-hight: 76vh;
   --pages-hight: 80vh;
   --nav-hight: 8vh;
 }

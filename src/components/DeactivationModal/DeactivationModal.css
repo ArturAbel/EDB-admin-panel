@@ -36,3 +36,15 @@
 .modal-cancel {
   width: 10rem;
 }
+
+@media screen and (max-width: 450px) {
+  .deactivation-modal {
+    height: 140%;
+  }
+
+  .deactivation-container {
+    height: 15%;
+    width: 80%;
+  }
+
+}

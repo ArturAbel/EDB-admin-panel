@@ -1,33 +1,25 @@
 import { DeactivationModal } from "../../components/DeactivationModal/DeactivationModal";
 import { AccountHolderForm } from "../../components/AccountHolderForm/AccountHolderForm";
 import { useMembersContext } from "../../context/MembersContext";
+import { SearchBar } from "../../components/SearchBar/SearchBar";
 import { useState } from "react";
 
 import "./AccountHolder.css";
 
 export const AccountHolder = () => {
+  const { members, updateMember, deactivateMember } = useMembersContext();
   const [updateDetails, setUpdateDetails] = useState(false);
   const [accountDetails, setAccountDetails] = useState({});
   const [displayModal, setDisplayModal] = useState(false);
-  const [formDisplay, setFormDisplay] = useState(false);
-  const { members, updateMember, deactivateMember } = useMembersContext();
   const [accountHolder, setAccountHolder] = useState();
+
+  const [formDisplay, setFormDisplay] = useState(false);
   const [toggler, setToggler] = useState(false);
   const [search, setSearch] = useState();
-
-  // ID or Name
-  const handleToggler = () => {
-    setToggler((prev) => !prev);
-  };
 
   // Display Modal
   const handleDisplayModal = () => {
     setDisplayModal((prev) => !prev);
-  };
-
-  // Search
-  const handleSearch = (e) => {
-    setSearch(e.target.value);
   };
 
   // Update
@@ -43,20 +35,7 @@ export const AccountHolder = () => {
     deactivateMember(accountDetails);
   };
 
-  //   Find A Member By ID or FullName
-  const handleGetUser = () => {
-    const member =
-      members.find((member) => {
-        const fullName = `${member.name} ${member.surname}`;
-        return (
-          (toggler && member.id === search) || (!toggler && fullName === search)
-        );
-      }) || {};
-    if (member.id) {
-      setAccountHolder(member);
-      setFormDisplay(true);
-    }
-  };
+  setToggler;
 
   return (
     <>
@@ -67,21 +46,15 @@ export const AccountHolder = () => {
         />
       )}
       <section className="account-holder-section">
-        <div className="account-holder-search">
-          <input
-            className="toggler"
-            type="checkbox"
-            onClick={handleToggler}
-          ></input>
-          <input
-            className="account-holder-search-input"
-            type="text"
-            onChange={handleSearch}
-          />
-          <button className="get-member button" onClick={handleGetUser}>
-            Get User
-          </button>
-        </div>
+        <SearchBar
+          setAccountHolder={setAccountHolder}
+          setFormDisplay={setFormDisplay}
+          setToggler={setToggler}
+          setSearch={setSearch}
+          toggler={toggler}
+          members={members}
+          search={search}
+        />
         <div className="account-holder-container">
           {formDisplay && (
             <>

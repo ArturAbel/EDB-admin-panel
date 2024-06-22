@@ -1,0 +1,12 @@
+.error-page {
+   background-color: var(--background-main5);
+   font-family: var(--font-title);
+   color: var(--background-main2);
+   height: var(--subPages-hight);
+   justify-content: center;
+   align-items: center;
+   font-size: 4rem;
+   display: flex;
+   width: 100%;
+ }
+ 

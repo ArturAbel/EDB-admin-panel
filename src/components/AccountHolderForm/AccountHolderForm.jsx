@@ -5,13 +5,10 @@ import "./AccountHolderForm.css";
 
 export const AccountHolderForm = ({
   setAccountDetails,
-  setActiveValue,
   accountDetails,
   accountHolder,
   updateDetails,
-  activeValue,
 }) => {
-
   const handleChange = (e) => {
     const { name, value } = e.target;
     setAccountDetails((prev) => ({
@@ -24,17 +21,15 @@ export const AccountHolderForm = ({
     setAccountDetails(accountHolder || {});
   }, [accountHolder]);
 
-  useEffect(() => {
-    const activeValue = accountDetails.isActive
+  // isActive Input String Display
+  const handleIsActiveValue = () => {
+    const value = accountDetails.isActive
       ? "Active"
       : accountDetails.isActive === undefined
       ? ""
       : "Deactivated";
-    setActiveValue(activeValue);
-    
-  }, [accountDetails]);
-
-  console.log(activeValue);
+    return value;
+  };
 
   return (
     <div className="account-holder-form">
@@ -107,16 +102,14 @@ export const AccountHolderForm = ({
             />
           </div>
           <div className="holder-form-accounts">
-            <label className="holder-form-label" htmlFor="id">
-              Active Account
-            </label>
-            <input
-              className="holder-form-input"
-              name="isActive"
-              disabled
-              value={activeValue}
+            <FormInput
+              value={handleIsActiveValue()}
               onChange={handleChange}
-            ></input>
+              label={"Active Account"}
+              name={"isActive"}
+              type={"text"}
+              disabled={true}
+            />
             <FormInput
               value={accountDetails.balance}
               onChange={handleChange}
