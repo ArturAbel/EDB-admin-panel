@@ -70,3 +70,10 @@
 .navbar-link.active {
   background-color: var(--background-main4);
 }
+
+@media screen and (max-width: 450px) {
+  .navbar-logo {
+
+    font-size: 2vh;
+  }
+}
