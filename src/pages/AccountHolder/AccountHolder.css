@@ -23,13 +23,18 @@
   gap: 2rem;
 }
 
-.account-deactivate,
-.account-update {
+.account-deactivate-button,
+.account-update-button {
   width: 11rem;
 }
 
-.account-deactivate {
+.account-deactivate-button {
   background-color: var(--background-red);
+}
+
+.account-update-button{
+  background-color: var(--background-blue);
+  color: var(--background-main1);
 }
 
 @media screen and (max-width: 450px) {

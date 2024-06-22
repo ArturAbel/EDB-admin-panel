@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 
 import "./SearchBar.css";
 
@@ -9,15 +8,12 @@ export const SearchBar = ({
   setSearch,
   members,
   toggler,
-  transaction,
   search,
 }) => {
+
+
+
   //   Find A Member By ID or FullName
-
-  useEffect(() => {
-    handleGetUser();
-  }, [transaction]);
-
   const handleGetUser = () => {
     const member =
       members.find((member) => {

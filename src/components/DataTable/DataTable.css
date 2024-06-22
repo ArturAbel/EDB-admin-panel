@@ -24,6 +24,7 @@
 
 @media screen and (max-width: 450px) {
   .accounts-data-table {
+    margin-top: 10rem;
     height: 100%;
     width: 100%;
   }
