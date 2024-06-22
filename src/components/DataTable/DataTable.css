@@ -21,3 +21,10 @@
 .MuiDataGrid-cell {
   font-size: 1.1rem;
 }
+
+@media screen and (max-width: 450px) {
+  .accounts-data-table {
+    height: 100%;
+    width: 100%;
+  }
+}

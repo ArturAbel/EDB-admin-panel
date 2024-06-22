@@ -2,3 +2,10 @@
   height: var(--pages-hight);
   width: 100%;
 }
+
+@media screen and (max-width: 450px) {
+  .admin-page-section {
+    height: 100%;
+    width: 100%;
+  }
+}

@@ -1,18 +1,25 @@
 .account-holder-form {
   justify-content: center;
+  flex-direction: column;
   align-items: center;
+  position: relative;
   display: flex;
   height: 60vh;
   width: 60vw;
 }
 
 .holder-form-wrapper {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+    rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
   align-items: flex-start;
+  border-radius: 10px;
+  padding: 5rem;
   display: flex;
   gap: 3rem;
 }
 
 .holder-form-image {
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
   height: 20rem;
   width: 15rem;
 }
@@ -34,4 +41,25 @@
   flex-direction: column;
   display: flex;
   width: 30%;
+}
+
+@media screen and (max-width: 450px) {
+  .account-holder-form {
+    height: 100%;
+    width: 100%;
+  }
+
+  .holder-form-wrapper {
+    flex-direction: column;
+    box-shadow:none;
+    border: none;
+    padding: 1rem;
+    width: 100%;
+  }
+
+  .holder-form-details {
+    flex-direction: column;
+    display: flex;
+    width: 100%;
+  }
 }

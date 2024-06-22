@@ -2,7 +2,86 @@
   background-color: var(--background-main2);
   height: var(--subPages-hight);
   justify-content: center;
+  flex-direction: column;
   align-items: center;
   display: flex;
   width: 100%;
+  height: 100%;
+}
+
+.add-account-title {
+  text-transform: capitalize;
+  font-size: 1.8rem;
+}
+
+.add-account-sub-title {
+  text-transform: capitalize;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.add-account-form-container {
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 15px;
+  align-items: center;
+  display: flex;
+  height: 50vh;
+  width: 23vw;
+}
+
+.add-account-tab-container {
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  background-color: var(--background-main1);
+  border-radius: 15px;
+}
+
+.rs-nav-item,
+.rs-nav-item:active {
+  color: black;
+  border: 0;
+}
+
+.input-error {
+  color: var(--background-red);
+  text-transform: uppercase;
+}
+
+.add-account-button {
+  margin-top: 2rem;
+}
+
+.add-account-button:disabled {
+  background-color: var(--background-main1);
+  pointer-events: none;
+  cursor: not-allowed;
+  color: #c0c0c0;
+}
+
+@media screen and (max-width: 450px) {
+  .add-account-section {
+    background-color: var(--background-main1);
+
+    height: 100%;
+    width: 100%;
+  }
+
+  .add-account-tab-container {
+    height: 100%;
+    width: 100%;
+  }
+  .add-account-button {
+    margin-top: 5rem;
+    height: 100%;
+  }
+
+  .add-account-form-container {
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 15px;
+    align-items: center;
+    display: flex;
+    height: 50vh;
+    width: 100%;
+  }
 }

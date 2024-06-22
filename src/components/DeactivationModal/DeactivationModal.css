@@ -1,0 +1,50 @@
+.deactivation-modal {
+  background-color: var(--background-modal);
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  z-index: 1;
+  top: 0;
+}
+
+.deactivation-container {
+  background-color: var(--background-main2);
+  border-radius: 10px;
+  height: 20vh;
+  width: 22vw;
+}
+
+.deactivation-modal-title {
+  text-align: center;
+  font-size: 2vh;
+  margin: 2rem 0;
+  height: 4vh;
+}
+
+.deactivation-buttons {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  height: 10vh;
+  gap: 1rem;
+}
+
+.modal-confirm,
+.modal-cancel {
+  width: 10rem;
+}
+
+@media screen and (max-width: 450px) {
+  .deactivation-modal {
+    height: 140%;
+  }
+
+  .deactivation-container {
+    height: 15%;
+    width: 80%;
+  }
+
+}

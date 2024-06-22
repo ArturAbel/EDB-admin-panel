@@ -1,0 +1,49 @@
+.transactions-member-container {
+  justify-content: center;
+  align-items: start;
+  display: flex;
+  height: 100%;
+  width: 25%;
+}
+
+.transactions-member-image {
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  margin-bottom: 3rem;
+  height: 25rem;
+  width: 20rem;
+}
+
+.transactions-member-container {
+  font-family: var(--font-title);
+  text-transform: capitalize;
+  flex-direction: column;
+  font-size: 1.4rem;
+  height: 100%;
+  width: 20vw;
+}
+
+.transactions-detail-container {
+  margin-bottom: 0.5rem;
+  align-items: center;
+  display: flex;
+  gap: 2rem;
+}
+
+.transactions-member-value {
+  font-family: var(--font-regular);
+}
+
+.transactions-member-detail {
+  align-self: flex-start;
+}
+
+@media screen and (max-width: 450px) {
+  .transactions-member-container {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5rem;
+    display: flex;
+    height: 100%;
+    width: 100%;
+  }
+}

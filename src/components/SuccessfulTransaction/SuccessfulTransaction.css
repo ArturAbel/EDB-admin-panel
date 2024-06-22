@@ -1,0 +1,16 @@
+.successful-transaction-section {
+  background-color: var(--background-secondary1);
+  height: var(--pages-hight);
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+  width: 100%;
+  gap: 10rem;
+}
+
+.successful-transaction-title {
+  font-family: var(--font-title);
+  text-transform: capitalize;
+  font-size: 4rem;
+}

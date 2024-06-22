@@ -2,94 +2,47 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  position: relative;
   display: flex;
   height: 100%;
   width: 100%;
 }
 
-.account-holder-search {
-  justify-content: center;
-  align-items: center;
+.account-holder-container {
   display: flex;
+  height: 60vh;
+  width: 80vw;
+}
+
+.account-holder-buttons {
+  justify-content: center;
+  flex-direction: column;
+  align-items: end;
+  display: flex;
+  width: 100%;
   gap: 2rem;
 }
 
-.account-holder-search-input {
-  border: 1px solid var(--background-main4);
-  font-family: var(--font-regular);
-  border-radius: 4px;
-  padding-left: 1rem;
-  font-size: 1.2rem;
-  width: 20rem;
-  height: 3rem;
+.account-deactivate,
+.account-update {
+  width: 11rem;
 }
 
-.account-holder-search-input:focus {
-  outline: none;
+.account-deactivate {
+  background-color: var(--background-red);
 }
 
-.toggler {
-  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
-    rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
-  background-color: var(--background-main3);
-  transition: background-color ease 0.3s;
-  display: inline-block;
-  border-radius: 50px;
-  position: relative;
-  appearance: none;
-  overflow: hidden;
-  cursor: pointer;
-  height: 2.5rem;
-  outline: none;
-  border: none;
-  width: 7rem;
-}
+@media screen and (max-width: 450px) {
+  .account-holder-container {
+    flex-direction: column;
+    display: flex;
+    height: 100%;
+    width: 100%;
+  }
 
-.toggler:before {
-  transition: all cubic-bezier(0.3, 1.5, 0.7, 1) 0.3s;
-  font: 0.9rem/2.5rem var(--font-regular);
-  background: var(--background-main2);
-  word-spacing: 4.1rem;
-  white-space: nowrap;
-  position: absolute;
-  text-indent: -2rem;
-  border-radius: 50%;
-  content: "ID Name";
-  display: block;
-  width: 2.2rem;
-  height: 2.2rem;
-  left: 4px;
-  top: 2px;
-}
-
-.toggler:checked {
-  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
-    rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
-  background-color: var(--background-main3);
-}
-
-.toggler:checked:before {
-  left: 4.1rem;
-}
-
-.account-holder-get-button {
-  background-color: var(--background-secondary2);
-  color: var(--color-font-text);
-  border: 1px solid transparent;
-  display: inline-block;
-  border-radius: 5px;
-  font-size: 1.2rem;
-  cursor: pointer;
-  padding: 0 1rem;
-  outline: none;
-  height: 3rem;
-}
-
-.account-holder-get-button:hover {
-  filter: brightness(1.1);
-}
-
-.account-holder-container {
-  height: 60vh;
-  width: 80vw;
+  .account-holder-buttons {
+    align-items: center;
+    height: 20vh;
+    width: 100%;
+  }
 }

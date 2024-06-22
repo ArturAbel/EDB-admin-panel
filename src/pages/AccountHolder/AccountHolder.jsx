@@ -1,61 +1,89 @@
-import { useMembersContext } from "../../context/MembersContext";
+import { DeactivationModal } from "../../components/DeactivationModal/DeactivationModal";
 import { AccountHolderForm } from "../../components/AccountHolderForm/AccountHolderForm";
+import { useMembersContext } from "../../context/MembersContext";
+import { SearchBar } from "../../components/SearchBar/SearchBar";
 import { useState } from "react";
 
 import "./AccountHolder.css";
 
 export const AccountHolder = () => {
-  const [formDisplay, setFormDisplay] = useState(false);
+  const { members, updateMember, deactivateMember } = useMembersContext();
+  const [updateDetails, setUpdateDetails] = useState(false);
+  const [accountDetails, setAccountDetails] = useState({});
+  const [displayModal, setDisplayModal] = useState(false);
   const [accountHolder, setAccountHolder] = useState();
+
+  const [formDisplay, setFormDisplay] = useState(false);
   const [toggler, setToggler] = useState(false);
-  const { members } = useMembersContext();
   const [search, setSearch] = useState();
 
-  const handleToggler = () => {
-    setToggler((prev) => !prev);
+  // Display Modal
+  const handleDisplayModal = () => {
+    setDisplayModal((prev) => !prev);
   };
 
-  const handleSearch = (e) => {
-    setSearch(e.target.value);
-  };
-
-  //   Find A Member By ID or FullName
-  const handleGetUser = () => {
-    const member =
-      members.find((member) => {
-        const fullName = `${member.name} ${member.surname}`;
-        return (
-          (toggler && member.id === search) || (!toggler && fullName === search)
-        );
-      }) || {};
-    if (member) {
-      setFormDisplay(true);
-      setAccountHolder(member);
+  // Update
+  const handleUpdateDetails = () => {
+    if (updateDetails) {
+      updateMember(accountDetails);
     }
+    setUpdateDetails((prev) => !prev);
   };
+
+  // Deactivate
+  const handleDeactivateMember = () => {
+    deactivateMember(accountDetails);
+  };
+
+  setToggler;
 
   return (
-    <section className="account-holder-section">
-      <div className="account-holder-search">
-        <input
-          className="toggler"
-          type="checkbox"
-          onClick={handleToggler}
-        ></input>
-        <input
-          className="account-holder-search-input"
-          type="text"
-          onChange={handleSearch}
+    <>
+      {displayModal && (
+        <DeactivationModal
+          handleDeactivateMember={handleDeactivateMember}
+          handleDisplayModal={handleDisplayModal}
         />
-        <button className="account-holder-get-button" onClick={handleGetUser}>
-          Get User
-        </button>
-      </div>
-      <div className="account-holder-container">
-        <div>
-          {formDisplay && <AccountHolderForm accountHolder={accountHolder} />}
+      )}
+      <section className="account-holder-section">
+        <SearchBar
+          setAccountHolder={setAccountHolder}
+          setFormDisplay={setFormDisplay}
+          setToggler={setToggler}
+          setSearch={setSearch}
+          toggler={toggler}
+          members={members}
+          search={search}
+        />
+        <div className="account-holder-container">
+          {formDisplay && (
+            <>
+              <div>
+                <AccountHolderForm
+                  setAccountDetails={setAccountDetails}
+                  accountDetails={accountDetails}
+                  accountHolder={accountHolder}
+                  updateDetails={updateDetails}
+                />
+              </div>
+              <div className="account-holder-buttons">
+                <button
+                  onClick={handleUpdateDetails}
+                  className="account-update button"
+                >
+                  Update Details
+                </button>
+                <button
+                  className="account-deactivate button"
+                  onClick={handleDisplayModal}
+                >
+                  Deactivate
+                </button>
+              </div>
+            </>
+          )}
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 };

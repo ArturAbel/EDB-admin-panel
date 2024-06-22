@@ -1,8 +1,12 @@
+import { SuccessfulTransaction } from "./components/SuccessfulTransaction/SuccessfulTransaction";
+import { AccountHolder } from "./pages/AccountHolder/AccountHolder";
+import { AdminDetails } from "./pages/AdminDetails/AdminDetails";
+import { Transactions } from "./pages/Transactions/Transactions";
 import { MembersProvider } from "./context/MembersContext";
 import { AddAccount } from "./pages/AddAccount/AddAccount";
 import { AdminPage } from "./pages/AdminPage/AdminPage";
+import { ErrorPage } from "./pages/ErrorPage/ErrorPage";
 import { Accounts } from "./pages/Accounts/Accounts";
-import { AccountHolder } from "./pages/AccountHolder/AccountHolder";
 import { Overview } from "./pages/Overview/Overview";
 import { Members } from "./pages/Members/Members";
 import {
@@ -33,18 +37,8 @@ function App() {
               element: <Accounts />,
             },
             {
-              path: "account",  
+              path: "account",
               element: <AccountHolder />,
-              children: [
-                {
-                  path: "update",
-                  element: "update",
-                },
-                {
-                  path: "deactivate",
-                  element: "deactivate",
-                },
-              ],
             },
             {
               path: "add",
@@ -58,15 +52,12 @@ function App() {
         },
         {
           path: "transactions",
-          element: "transactions",
-          children: [
-            { path: "transfer", element: "" },
-            { path: "deposit", element: "" },
-            { path: "withdraw", element: "" },
-          ],
+          element: <Transactions />,
         },
-        { path: "admin-update", element: "update details" },
-        { path: "*", element: "404" },
+        { path: "transactions/success", element: <SuccessfulTransaction /> },
+
+        { path: "admin-details", element: <AdminDetails /> },
+        { path: "*", element: <ErrorPage /> },
       ],
     },
   ]);
@@ -79,11 +70,3 @@ function App() {
 }
 
 export default App;
-
-// import { customAlphabet } from "nanoid";
-// const customNanoid = customAlphabet(
-//   "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ",
-//   10
-// );
-// const id = customNanoid();
-// console.log(id);

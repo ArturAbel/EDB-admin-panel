@@ -1,0 +1,77 @@
+.transactions-modal {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+    rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+  background-color: var(--background-main2);
+  flex-direction: column;
+  border-radius: 10px;
+  align-self: center;
+  display: flex;
+  height: 20rem;
+  width: 30rem;
+}
+
+.transactions-title-container {
+  color: var(--background-main5);
+  text-transform: capitalize;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  width: 100%;
+  height: 40%;
+}
+
+.transactions-actions-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2rem;
+  height: 90%;
+}
+
+.transactions-modal-title {
+  font-size: 2rem;
+}
+
+.transactions-modal-input {
+  background-color: var(--background-main2);
+  width: 10rem;
+  height: 3rem;
+  border: 0;
+  border-bottom: 1px solid var(--background-main5);
+}
+
+.transactions-modal-input:focus {
+  outline: none;
+}
+
+.transactions-modal-input::placeholder {
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.transactions-modal-buttons {
+  display: flex;
+  gap: 1rem;
+}
+.transactions-modal-action {
+  text-transform: capitalize;
+}
+
+.transactions-modal-cancel:disabled,
+.transactions-modal-action:disabled {
+  background-color: var(--background-main1);
+  pointer-events: none;
+  cursor: not-allowed;
+  color: #c0c0c0;
+}
+
+@media screen and (max-width: 450px) {
+   .transactions-modal {
+      margin-bottom: 5rem;
+      height: 40rem;
+      width: 30rem;
+    }
+   
+ }
+ 
