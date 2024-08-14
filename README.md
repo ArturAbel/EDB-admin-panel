@@ -15,8 +15,8 @@ The EDM Admin Panel is a web application designed for administrators of the eDig
 <a name="images"></a>
 ## Images
 
-![Image 1](path/to/your/image1.png)
-![Image 2](path/to/your/image2.png)
+![Image 1](public/assets/readme/1.jpg)
+![Image 2](public/assets/readme/2.jpg)
 
 <a name="technologies"></a>
 ## Technologies Used
